@@ -18,7 +18,7 @@ app.get("/home", (req, res) => {
     response.on("data", (data) => {
       const adviceData = JSON.parse(data);
       const advice = adviceData.slip.advice;
-      res.send(advice);
+      res.render("home", { advice });
     });
   });
 });
