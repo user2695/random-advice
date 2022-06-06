@@ -7,7 +7,12 @@ const app = express();
 app.use(express.json());
 
 app.set("view engine", "ejs");
+
 app.get("/", (req, res) => {
+  res.render("home");
+});
+
+app.get("/home", (req, res) => {
   const url = "https://api.adviceslip.com/advice";
   https.get(url, (response) => {
     response.on("data", (data) => {
