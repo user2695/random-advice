@@ -8,8 +8,7 @@ app.use(express.json());
 
 app.set("view engine", "ejs");
 
-
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
   const url = "https://api.adviceslip.com/advice";
   https.get(url, (response) => {
     response.on("data", (data) => {
